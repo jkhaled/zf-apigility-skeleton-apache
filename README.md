@@ -1,5 +1,7 @@
-Apigility Skeleton Application
+Apigility Skeleton Application (for apache)
 ==============================
+
+This particular repository is for those who want a Vagrant instance with Apache on it, instead of using the built-in PHP server.
 
 Requirements
 ------------
