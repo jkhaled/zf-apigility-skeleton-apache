@@ -1,0 +1,3 @@
+[submodule "module/Common"]
+	path = module/Common
+	url = https://github.com/EMCP/emcp-apigility-common.git
