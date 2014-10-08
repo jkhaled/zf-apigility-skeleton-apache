@@ -15,3 +15,7 @@ See the upstream repository for Apigility specific help.
 `cd zf-apigility-skeleton-apache`
 
 `vagrant up`
+
+test by visiting the following URL..
+
+`192.168.56.101:8888`

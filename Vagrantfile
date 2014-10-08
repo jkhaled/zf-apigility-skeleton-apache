@@ -1,14 +1,16 @@
 Vagrant.configure("2") do |config|
 
+    config.vm.box = "phusion-open-ubuntu-14.04-amd64"
+    config.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
+
+    config.vm.provider :vmware_fusion do |f, override|
+        override.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vmwarefusion.box"
+    end
+
     config.vm.provision :shell, :path => ".devops/image_bootstrap.sh", :args => "/vagrant" #pass root folder as param
     config.vm.provision :shell, :path => ".devops/apigility_bootstrap.sh"
 
-    config.vm.box = "netsensia/ubuntu-trusty64"
-
-    config.vm.network :forwarded_port, guest: 8888, host: 8888
     config.vm.network :private_network, ip: "192.168.56.101"
-
-    config.ssh.forward_agent = true
 
     config.vm.provider :virtualbox do |v, override|
         host = RbConfig::CONFIG['host_os']
