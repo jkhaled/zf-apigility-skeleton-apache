@@ -10,6 +10,8 @@ This particular repository is for those who want a Vagrant instance with Apache 
 
 See the upstream repository for Apigility specific help.
 
+`https://github.com/zfcampus/zf-apigility-skeleton/blob/master/README.md`
+
 `git clone https://github.com/EMCP/zf-apigility-skeleton-apache`
 
 `cd zf-apigility-skeleton-apache`
