@@ -21,7 +21,7 @@ return array(
         'ZF\\ContentValidation',
         'ZF\\Rest',
         'ZF\\Rpc',
-        'ZF\\Versioning'
+        'ZF\\Versioning',
     ),
     'module_listener_options' => array(
         'module_paths' => array(
