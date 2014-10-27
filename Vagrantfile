@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision :shell, :path => ".devops/image_bootstrap.sh", :args => "/vagrant" #pass root folder as param
     config.vm.provision :shell, :path => ".devops/apigility_bootstrap.sh"
 
-    config.vm.network :private_network, ip: "192.168.56.101"
+    config.vm.network :private_network, ip: "192.168.56.102"
 
     config.vm.provider :virtualbox do |v, override|
         host = RbConfig::CONFIG['host_os']
@@ -24,8 +24,7 @@ Vagrant.configure("2") do |config|
 
         v.customize ["modifyvm", :id, "--cpus", cpus]
         v.customize ["modifyvm", :id, "--memory", "1024"]
-        v.gui = true #to debug
-        #v.gui = false
+        v.gui = false #to debug
     end
 
     config.vm.provider :vmware_workstation do |v, override|
@@ -34,8 +33,7 @@ Vagrant.configure("2") do |config|
 
       config.vm.provider :vmware_fusion do |v|
         v.vmx["memsize"] = "1024"
-        v.gui = true #to debug
-        #v.gui = false
+        v.gui = false #to debug
       end
     
     config.vm.synced_folder ".", "/vagrant", nfs: true
